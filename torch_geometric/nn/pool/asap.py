@@ -160,8 +160,8 @@ class ASAPooling(torch.nn.Module):
         else:
             edge_index, edge_weight = remove_self_loops(
                 edge_index, edge_weight)
-
-        return x, edge_index, edge_weight, batch, perm
+        # also returning S (which we think is) cluster assignments.
+        return x, edge_index, edge_weight, batch, perm, S
 
     @torch.jit.unused
     def jittable(self) -> 'ASAPooling':
