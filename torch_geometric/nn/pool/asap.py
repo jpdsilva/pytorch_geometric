@@ -105,7 +105,7 @@ class ASAPooling(torch.nn.Module):
             * **edge_weight** (*torch.Tensor, optional*): The coarsened edge
               weights.
             * **batch** (*torch.Tensor*): The coarsened batch vector.
-            * **index** (*torch.Tensor*): The top-:math:`k` node indices of
+            * **perm** (*torch.Tensor*): The top-:math:`k` node indices of
               nodes which are kept after pooling.
         """
         N = x.size(0)
